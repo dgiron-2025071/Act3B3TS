@@ -1,0 +1,17 @@
+.tarjeta {
+  background: #2a2b33;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #f1f5f9;
+}
+
+.tarjeta h2 { color: #f8fafc; }
+
+.tabla-responsiva { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid #40414c; font-size: 0.9rem; }
+th { background: #33343d; color: #c7d2fe; font-weight: 600; }
+tr:hover td { background: #313240; }
+.mensaje-error { color: #f87171; }

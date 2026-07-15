@@ -1,0 +1,31 @@
+<div class="contenedor">
+  <header class="encabezado">
+    <h1>Gestión de Clientes y Productos</h1>
+    <nav class="pestanas">
+      <button
+        [class.activa]="seccionActiva === 'clientes'"
+        (click)="cambiarSeccion('clientes')"
+      >
+        Clientes
+      </button>
+      <button
+        [class.activa]="seccionActiva === 'productos'"
+        (click)="cambiarSeccion('productos')"
+      >
+        Productos
+      </button>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <ng-container *ngIf="seccionActiva === 'clientes'">
+      <app-cliente-form (clienteRegistrado)="onClienteRegistrado()"></app-cliente-form>
+      <app-cliente-list [recargar]="recargarClientes"></app-cliente-list>
+    </ng-container>
+
+    <ng-container *ngIf="seccionActiva === 'productos'">
+      <app-producto-form (productoRegistrado)="onProductoRegistrado()"></app-producto-form>
+      <app-producto-list [recargar]="recargarProductos"></app-producto-list>
+    </ng-container>
+  </main>
+</div>

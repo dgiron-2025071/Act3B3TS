@@ -1,0 +1,44 @@
+<div class="tarjeta">
+  <h2>Registrar cliente</h2>
+
+  <form [formGroup]="formulario" (ngSubmit)="guardar()" class="formulario">
+    <div class="campo">
+      <label for="codigo_cliente">Código</label>
+      <input id="codigo_cliente" type="text" formControlName="codigo_cliente" />
+      <small class="error" *ngIf="formulario.get('codigo_cliente')?.touched && formulario.get('codigo_cliente')?.invalid">
+        El código es obligatorio.
+      </small>
+    </div>
+
+    <div class="campo">
+      <label for="nombre_cliente">Nombre</label>
+      <input id="nombre_cliente" type="text" formControlName="nombre_cliente" />
+      <small class="error" *ngIf="formulario.get('nombre_cliente')?.touched && formulario.get('nombre_cliente')?.invalid">
+        El nombre es obligatorio.
+      </small>
+    </div>
+
+    <div class="campo">
+      <label for="direccion_cliente">Dirección</label>
+      <input id="direccion_cliente" type="text" formControlName="direccion_cliente" />
+      <small class="error" *ngIf="formulario.get('direccion_cliente')?.touched && formulario.get('direccion_cliente')?.invalid">
+        La dirección es obligatoria.
+      </small>
+    </div>
+
+    <div class="campo">
+      <label for="telefono_cliente">Teléfono</label>
+      <input id="telefono_cliente" type="text" formControlName="telefono_cliente" />
+      <small class="error" *ngIf="formulario.get('telefono_cliente')?.touched && formulario.get('telefono_cliente')?.invalid">
+        El teléfono es obligatorio.
+      </small>
+    </div>
+
+    <button type="submit" class="boton-primario">Guardar</button>
+
+    <p class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</p>
+    <ul class="mensaje-error" *ngIf="erroresServidor.length">
+      <li *ngFor="let err of erroresServidor">{{ err }}</li>
+    </ul>
+  </form>
+</div>

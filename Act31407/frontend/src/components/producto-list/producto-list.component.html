@@ -1,0 +1,29 @@
+<div class="tarjeta">
+  <h2>Productos registrados</h2>
+
+  <p *ngIf="cargando">Cargando...</p>
+  <p class="mensaje-error" *ngIf="error">{{ error }}</p>
+
+  <div class="tabla-responsiva" *ngIf="!cargando && productos.length">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.codigo_producto }}</td>
+          <td>{{ producto.nombre_producto }}</td>
+          <td>{{ producto.precio_producto | number:'1.2-2' }}</td>
+          <td>{{ producto.stock_producto }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="!cargando && !error && !productos.length">Aún no hay productos registrados.</p>
+</div>

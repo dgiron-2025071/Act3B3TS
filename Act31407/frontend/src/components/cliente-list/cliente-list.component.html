@@ -1,0 +1,29 @@
+<div class="tarjeta">
+  <h2>Clientes registrados</h2>
+
+  <p *ngIf="cargando">Cargando...</p>
+  <p class="mensaje-error" *ngIf="error">{{ error }}</p>
+
+  <div class="tabla-responsiva" *ngIf="!cargando && clientes.length">
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.codigo_cliente }}</td>
+          <td>{{ cliente.nombre_cliente }}</td>
+          <td>{{ cliente.direccion_cliente }}</td>
+          <td>{{ cliente.telefono_cliente }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="!cargando && !error && !clientes.length">Aún no hay clientes registrados.</p>
+</div>

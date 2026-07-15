@@ -1,0 +1,32 @@
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.encabezado h1 {
+  font-size: 1.6rem;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.pestanas button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: #2e2f38;
+  color: #cbd5e1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.pestanas button.activa {
+  background: #4f46e5;
+  color: white;
+}
+
+.pestanas button:hover:not(.activa) {
+  background: #3a3b46;
+}
